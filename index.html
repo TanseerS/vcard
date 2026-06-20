@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+    <title>Tanseer Khan — Cloud &amp; DevOps Engineer</title>
+    <meta name="description" content="Tanseer Khan — Cloud &amp; DevOps Engineer and AWS Community Builder. Connect, save my contact, or pay in one tap." />
+
+    <!-- Favicon / app icons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#0B0F14" />
+
+    <!-- Open Graph / social -->
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content="Tanseer Khan — Cloud &amp; DevOps Engineer" />
+    <meta property="og:description" content="Digital visiting card. Connect, save my contact, or pay in one tap." />
+    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:url" content="https://tanseer.qd.je" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Tanseer Khan — Cloud &amp; DevOps Engineer" />
+    <meta name="twitter:description" content="Digital visiting card. Connect, save my contact, or pay in one tap." />
+    <meta name="twitter:image" content="/og-image.png" />
+
+    <!-- Fonts: Space Grotesk (display) · Inter (body) · JetBrains Mono (spec labels) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- No-flash theme: resolve before first paint -->
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          if (t !== 'light' && t !== 'dark') {
+            t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          }
+          document.documentElement.setAttribute('data-theme', t);
+          var m = document.querySelector('meta[name="theme-color"]');
+          if (m) m.setAttribute('content', t === 'dark' ? '#0B0F14' : '#F4F6F9');
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
