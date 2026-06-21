@@ -2,7 +2,6 @@ import { motion } from 'framer-motion'
 import { LuArrowUpRight } from 'react-icons/lu'
 import type { CSSProperties } from 'react'
 import type { LinkItem } from '../config/site'
-import { chipIn } from '../lib/motion'
 
 type Props = { item: LinkItem; variant?: 'tile' | 'row' }
 
@@ -13,13 +12,12 @@ export default function LinkChip({ item, variant = 'tile' }: Props) {
   if (variant === 'row') {
     return (
       <motion.a
-        variants={chipIn}
         whileTap={{ scale: 0.97 }}
         href={item.href}
         target="_blank"
         rel="noreferrer noopener"
         style={brandStyle}
-        className="chip group glass flex items-center gap-3.5 rounded-2xl px-4 py-3.5 text-text"
+        className="chip group glass flex w-full items-center gap-3.5 rounded-2xl px-4 py-3.5 text-text"
       >
         <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-[color-mix(in_srgb,var(--text)_7%,transparent)] text-text transition-colors duration-200 group-hover:[color:var(--brand)]">
           <Icon size={21} />
@@ -38,13 +36,12 @@ export default function LinkChip({ item, variant = 'tile' }: Props) {
 
   return (
     <motion.a
-      variants={chipIn}
       whileTap={{ scale: 0.96 }}
       href={item.href}
       target="_blank"
       rel="noreferrer noopener"
       style={brandStyle}
-      className="chip group glass relative flex flex-col items-center justify-center gap-2.5 rounded-2xl px-2 py-4 text-text"
+      className="chip group glass relative flex h-full w-full flex-col items-center justify-center gap-2.5 rounded-2xl px-2 py-4 text-text"
     >
       <LuArrowUpRight
         size={13}

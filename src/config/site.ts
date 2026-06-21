@@ -1,6 +1,6 @@
 import type { IconType } from 'react-icons'
-import { FaWhatsapp, FaXTwitter, FaLinkedinIn, FaGithub, FaAws } from 'react-icons/fa6'
-import { SiHashnode, SiPhonepe, SiGooglepay, SiPaytm } from 'react-icons/si'
+import { FaWhatsapp, FaXTwitter, FaLinkedinIn, FaGithub, FaAws, FaInstagram, FaSnapchat } from 'react-icons/fa6'
+import { SiHashnode, SiMedium, SiPhonepe, SiGooglepay, SiPaytm } from 'react-icons/si'
 import { LuGlobe, LuMail, LuPhone } from 'react-icons/lu'
 
 /* ============================================================================
@@ -37,10 +37,9 @@ export const site = {
   /** AWS Community Builder profile — also powers the verified badge. */
   awsBuilder: 'https://builder.aws.com/community/@tanseer?tab=badges',
 
-  /** TODO: replace with your real UPI ID, e.g. tanseer@okhdfcbank */
-  upiId: 'tanseer@upi',
+  upiId: '8793314013@ybl',
   upiName: 'Tanseer Khan',
-  upiPlaceholder: true, // set false once upiId is real — gates the live QR note
+  upiPlaceholder: false, // set false once upiId is real — gates the live QR note
 } as const
 
 export type LinkItem = {
@@ -58,7 +57,7 @@ const wa = `https://wa.me/${site.phone.replace('+', '')}?text=${encodeURICompone
 
 export const connectLinks: LinkItem[] = [
   { id: 'whatsapp', label: 'WhatsApp', icon: FaWhatsapp, href: wa, hint: 'Say hi', brand: '#25D366' },
-  { id: 'x', label: 'X', icon: FaXTwitter, href: 'https://x.com/KhanTanseer2', brand: '#e7e9ea' },
+  { id: 'x', label: 'X', icon: FaXTwitter, href: 'https://x.com/KhanTanseer2', brand: 'var(--text)' },
   {
     id: 'linkedin',
     label: 'LinkedIn',
@@ -66,10 +65,24 @@ export const connectLinks: LinkItem[] = [
     href: 'https://www.linkedin.com/in/tanseer-khan-a5905b262/',
     brand: '#0A66C2',
   },
+  {
+    id: 'instagram',
+    label: 'Instagram',
+    icon: FaInstagram,
+    href: 'https://www.instagram.com/_im_trk?igsh=dWphNzdtNTk1Y3B2',
+    brand: '#E4405F',
+  },
+  {
+    id: 'snapchat',
+    label: 'Snapchat',
+    icon: FaSnapchat,
+    href: 'https://www.snapchat.com/add/im-trk?share_id=6vFS7XTK274&locale=en-IN',
+    brand: '#FFC400',
+  },
 ]
 
 export const workLinks: LinkItem[] = [
-  { id: 'github', label: 'GitHub', icon: FaGithub, href: 'https://github.com/TanseerS', sub: '@TanseerS', brand: '#e7e9ea' },
+  { id: 'github', label: 'GitHub', icon: FaGithub, href: 'https://github.com/TanseerS', sub: '@TanseerS', brand: 'var(--text)' },
   { id: 'portfolio', label: 'Portfolio', icon: LuGlobe, href: site.portfolio, sub: 'tanseer.qd.je', brand: '#22c55e' },
   { id: 'aws', label: 'AWS Builder', icon: FaAws, href: site.awsBuilder, sub: 'Community', brand: '#FF9900' },
   {
@@ -79,6 +92,14 @@ export const workLinks: LinkItem[] = [
     href: 'https://devops-aws-cloud.hashnode.dev/',
     sub: 'Blog',
     brand: '#2962FF',
+  },
+  {
+    id: 'medium',
+    label: 'Medium',
+    icon: SiMedium,
+    href: 'https://medium.com/@khantanseer',
+    sub: 'Articles',
+    brand: 'var(--text)',
   },
 ]
 
@@ -90,6 +111,6 @@ export const reachLinks: LinkItem[] = [
 /** Payment apps for the bottom sheet. scheme drives the deep-link builder. */
 export const payApps: { id: string; label: string; icon: IconType; scheme: string; brand: string }[] = [
   { id: 'phonepe', label: 'PhonePe', icon: SiPhonepe, scheme: 'phonepe', brand: '#5f259f' },
-  { id: 'gpay', label: 'Google Pay', icon: SiGooglepay, scheme: 'tez', brand: '#e7e9ea' },
+  { id: 'gpay', label: 'Google Pay', icon: SiGooglepay, scheme: 'tez', brand: 'var(--text)' },
   { id: 'paytm', label: 'Paytm', icon: SiPaytm, scheme: 'paytmmp', brand: '#00BAF2' },
 ]

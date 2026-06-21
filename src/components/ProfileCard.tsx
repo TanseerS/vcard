@@ -6,7 +6,6 @@ import { site } from '../config/site'
 import { useTheme } from '../lib/theme'
 import { downloadVCard } from '../lib/vcard'
 import { heroStagger, riseIn } from '../lib/motion'
-import VerifiedBadge from './VerifiedBadge'
 import ThemeToggle from './ThemeToggle'
 
 type SaveState = 'idle' | 'saving' | 'saved'
@@ -121,21 +120,9 @@ export default function ProfileCard() {
         className="absolute inset-x-0 bottom-[15svh] flex flex-col gap-3 px-7 text-white"
       >
         <motion.div variants={reduce ? undefined : riseIn} className="relative w-fit">
-          <div className="flex items-center gap-2.5">
-            <h1 className="name-type text-[clamp(2rem,9vw,2.6rem)] text-white drop-shadow-[0_2px_14px_rgba(0,0,0,0.5)]">
-              {site.name}
-            </h1>
-            <a
-              href={site.awsBuilder}
-              target="_blank"
-              rel="noreferrer noopener"
-              aria-label="AWS Community Builder — verified"
-              title="AWS Community Builder"
-              className="shrink-0 translate-y-[2px] transition-transform hover:scale-110 active:scale-95"
-            >
-              <VerifiedBadge size={24} />
-            </a>
-          </div>
+          <h1 className="name-type text-[clamp(2rem,9vw,2.6rem)] text-white drop-shadow-[0_2px_14px_rgba(0,0,0,0.5)]">
+            {site.name}
+          </h1>
           {!reduce && (
             <motion.span
               aria-hidden="true"
@@ -155,11 +142,10 @@ export default function ProfileCard() {
 
         <motion.p
           variants={reduce ? undefined : riseIn}
-          className="flex flex-col gap-0.5"
-          style={{ textShadow: '0 1px 8px rgba(0,0,0,0.5)' }}
+          className="text-[1rem] font-semibold text-accent"
+          style={{ textShadow: '0 1px 10px rgba(0,0,0,0.6)' }}
         >
-          <span className="text-[1rem] font-semibold text-white">{site.role}</span>
-          <span className="text-[0.86rem] font-normal leading-snug text-white/80">{site.bio}</span>
+          {site.role}
         </motion.p>
 
         <motion.div variants={reduce ? undefined : riseIn} className="mt-1 flex items-end justify-between gap-3">

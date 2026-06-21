@@ -3,8 +3,7 @@ import { motion, useReducedMotion } from 'framer-motion'
 import { LuIndianRupee, LuChevronUp, LuChevronDown } from 'react-icons/lu'
 import { ThemeProvider } from './lib/theme'
 import ProfileCard from './components/ProfileCard'
-import Section from './components/Section'
-import LinkChip from './components/LinkChip'
+import LinkSection from './components/LinkSection'
 import PaySheet from './components/PaySheet'
 import { site, connectLinks, workLinks, reachLinks } from './config/site'
 import { sectionReveal } from './lib/motion'
@@ -78,23 +77,30 @@ function Card() {
 
             {/* links */}
             <div className="relative flex flex-col gap-7 px-4 pb-12 pt-10">
-              <Section id="links" label="CONNECT" count="03" className="grid grid-cols-3 gap-2.5">
-                {connectLinks.map((item) => (
-                  <LinkChip key={item.id} item={item} variant="tile" />
-                ))}
-              </Section>
+              <LinkSection
+                id="links"
+                label="CONNECT"
+                items={connectLinks}
+                variant="tile"
+                limit={3}
+                gridClass="grid grid-cols-3 gap-2.5"
+              />
 
-              <Section label="WORK / TECH" count="04" className="grid grid-cols-2 gap-2.5">
-                {workLinks.map((item) => (
-                  <LinkChip key={item.id} item={item} variant="tile" />
-                ))}
-              </Section>
+              <LinkSection
+                label="WORK / TECH"
+                items={workLinks}
+                variant="tile"
+                limit={2}
+                gridClass="grid grid-cols-2 gap-2.5"
+              />
 
-              <Section label="REACH" count="02" className="grid grid-cols-1 gap-2.5">
-                {reachLinks.map((item) => (
-                  <LinkChip key={item.id} item={item} variant="row" />
-                ))}
-              </Section>
+              <LinkSection
+                label="REACH"
+                items={reachLinks}
+                variant="row"
+                limit={2}
+                gridClass="grid grid-cols-1 gap-2.5"
+              />
 
               {/* Payments */}
               <motion.section
